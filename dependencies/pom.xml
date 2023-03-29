@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.lifetime</groupId>
+    <artifactId>dependencies</artifactId>
+    <version>${revision}</version>
+    <packaging>pom</packaging>
+
+
+    <properties>
+        <revision>1.0.1-snapshot</revision>
+        <java.version>1.8</java.version>
+
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <spring.boot.version>2.7.8</spring.boot.version>
+        <springdoc.version>1.6.14</springdoc.version>
+        <knife4j.version>4.0.0</knife4j.version>
+        <servlet.versoin>2.5</servlet.versoin>
+
+        <!-- 工具 -->
+        <bitwalker.version>1.21</bitwalker.version>
+        <swagger.version>3.0.0</swagger.version>
+        <kaptcha.version>2.3.2</kaptcha.version>
+        <mybatis-spring-boot.version>2.2.2</mybatis-spring-boot.version>
+        <pagehelper.boot.version>1.4.5</pagehelper.boot.version>
+        <fastjson.version>2.0.16</fastjson.version>
+        <oshi.version>6.3.2</oshi.version>
+        <commons.io.version>2.11.0</commons.io.version>
+        <commons.fileupload.version>1.4</commons.fileupload.version>
+        <commons.collections.version>3.2.2</commons.collections.version>
+        <poi.version>4.1.2</poi.version>
+        <velocity.version>2.3</velocity.version>
+        <jwt.version>0.9.1</jwt.version>
+        <captcha-plus.version>1.0.2</captcha-plus.version>
+        <jsoup.version>1.15.3</jsoup.version>
+        <lombok.version>1.18.24</lombok.version>
+        <mapstruct.version>1.5.3.Final</mapstruct.version>
+        <hutool.version>5.8.11</hutool.version>
+        <easyexcel.verion>3.2.0</easyexcel.verion>
+        <velocity.version>2.3</velocity.version>
+        <screw.version>1.0.5</screw.version>
+        <fastjson.version>1.2.83</fastjson.version>
+        <guava.version>31.1-jre</guava.version>
+        <guice.version>5.1.0</guice.version>
+        <transmittable-thread-local.version>2.14.2</transmittable-thread-local.version>
+        <commons-net.version>3.8.0</commons-net.version>
+        <jsch.version>0.1.55</jsch.version>
+        <tika-core.version>2.6.0</tika-core.version>
+        <netty-all.version>4.1.86.Final</netty-all.version>
+        <ip2region.version>2.6.6</ip2region.version>
+    </properties>
+
+
+    <!-- 依赖声明 -->
+    <dependencyManagement>
+        <dependencies>
+
+            <!-- SpringBoot的依赖配置-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- 阿里数据库连接池 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+
+            <!-- 解析客户端操作系统、浏览器等 -->
+            <dependency>
+                <groupId>eu.bitwalker</groupId>
+                <artifactId>UserAgentUtils</artifactId>
+                <version>${bitwalker.version}</version>
+            </dependency>
+
+            <!-- SpringBoot集成mybatis框架 -->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis-spring-boot.version}</version>
+            </dependency>
+
+            <!-- pagehelper 分页插件 -->
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>${pagehelper.boot.version}</version>
+            </dependency>
+
+            <!-- 获取系统信息 -->
+            <dependency>
+                <groupId>com.github.oshi</groupId>
+                <artifactId>oshi-core</artifactId>
+                <version>${oshi.version}</version>
+            </dependency>
+
+            <!-- io常用工具类 -->
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons.io.version}</version>
+            </dependency>
+
+            <!-- 文件上传工具类 -->
+            <dependency>
+                <groupId>commons-fileupload</groupId>
+                <artifactId>commons-fileupload</artifactId>
+                <version>${commons.fileupload.version}</version>
+            </dependency>
+
+            <!-- excel工具 -->
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+
+            <!-- velocity代码生成使用模板 -->
+            <dependency>
+                <groupId>org.apache.velocity</groupId>
+                <artifactId>velocity-engine-core</artifactId>
+                <version>${velocity.version}</version>
+            </dependency>
+
+            <!-- collections工具类 -->
+            <dependency>
+                <groupId>commons-collections</groupId>
+                <artifactId>commons-collections</artifactId>
+                <version>${commons.collections.version}</version>
+            </dependency>
+
+            <!-- 阿里JSON解析器 -->
+            <dependency>
+                <groupId>com.alibaba.fastjson2</groupId>
+                <artifactId>fastjson2</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+
+            <!-- Token生成与解析-->
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>${jwt.version}</version>
+            </dependency>
+
+
+        </dependencies>
+    </dependencyManagement>
+
+</project>
