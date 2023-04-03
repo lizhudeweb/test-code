@@ -5,7 +5,7 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.lifetime</groupId>
+    <groupId>com.codetime</groupId>
     <artifactId>dependencies</artifactId>
     <version>${revision}</version>
     <packaging>pom</packaging>
@@ -38,7 +38,7 @@
         <commons.collections.version>3.2.2</commons.collections.version>
         <poi.version>4.1.2</poi.version>
         <velocity.version>2.3</velocity.version>
-        <jwt.version>0.9.1</jwt.version>
+<!--        <jwt.version>0.9.1</jwt.version>-->
         <captcha-plus.version>1.0.2</captcha-plus.version>
         <jsoup.version>1.15.3</jsoup.version>
         <lombok.version>1.18.24</lombok.version>
@@ -154,6 +154,36 @@
                 <groupId>io.jsonwebtoken</groupId>
                 <artifactId>jjwt</artifactId>
                 <version>${jwt.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.inject</groupId>
+                <artifactId>guice</artifactId>
+                <version>${guice.version}</version>
+            </dependency>
+
+            <!-- 模块-->
+            <dependency>
+                <groupId>com.codetime</groupId>
+                <artifactId>integration-commom</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <!-- 模块-->
+            <dependency>
+                <groupId>com.codetime</groupId>
+                <artifactId>integration-web</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <!-- 模块-->
+            <dependency>
+                <groupId>com.codetime</groupId>
+                <artifactId>integration-security</artifactId>
+                <version>${revision}</version>
             </dependency>
 
 
