@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.codetime</groupId>
-    <artifactId>integration-share-service</artifactId>
+    <artifactId>integration-mybatis</artifactId>
     <packaging>jar</packaging>
 
 </project>

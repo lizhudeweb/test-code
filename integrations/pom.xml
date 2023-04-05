@@ -14,8 +14,8 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>integration-share-service</module>
         <module>integration-commom</module>
+        <module>integration-mybatis</module>
         <module>integration-security</module>
         <module>integration-web</module>
     </modules>
