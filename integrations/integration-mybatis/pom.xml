@@ -13,4 +13,28 @@
     <artifactId>integration-mybatis</artifactId>
     <packaging>jar</packaging>
 
+    <dependencies>
+        <!-- commom模块-->
+        <dependency>
+            <groupId>com.codetime</groupId>
+            <artifactId>integration-commom</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+        </dependency>
+
+        <!-- 分页 -->
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper-spring-boot-starter</artifactId>
+        </dependency>
+    </dependencies>
+
 </project>

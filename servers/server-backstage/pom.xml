@@ -14,26 +14,35 @@
     <packaging>jar</packaging>
 
     <dependencies>
-
-        <!-- Mysql驱动包 -->
-<!--        <dependency>-->
-<!--            <groupId>mysql</groupId>-->
-<!--            <artifactId>mysql-connector-java</artifactId>-->
-<!--        </dependency>-->
-
-        <!-- 核心模块-->
+        <!-- commom模块-->
         <dependency>
             <groupId>com.codetime</groupId>
             <artifactId>integration-commom</artifactId>
         </dependency>
-        <!-- 核心模块-->
+        <!-- web模块 -->
         <dependency>
             <groupId>com.codetime</groupId>
-            <artifactId>integration-security</artifactId>
+            <artifactId>integration-web</artifactId>
+        </dependency>
+
+        <!-- 核心模块-->
+<!--        <dependency>-->
+<!--            <groupId>com.codetime</groupId>-->
+<!--            <artifactId>integration-security</artifactId>-->
+<!--        </dependency>-->
+
+        <dependency>
+            <groupId>com.codetime</groupId>
+            <artifactId>integration-mybatis</artifactId>
+        </dependency>
+
+        <!-- 自定义验证注解 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
 
     </dependencies>
-
 
     <build>
         <finalName>${project.artifactId}</finalName>
@@ -64,6 +73,5 @@
             </plugin>
         </plugins>
     </build>
-
 
 </project>
