@@ -86,3 +86,9 @@ xss:
   excludes: /system/notice
   # 匹配链接
   urlPatterns: /system/*,/monitor/*,/tool/*
+
+#自定义参数
+define:
+  userinfo:
+    username: 666666
+    age: 88

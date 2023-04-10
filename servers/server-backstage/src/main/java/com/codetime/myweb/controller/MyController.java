@@ -1,17 +1,13 @@
-package com.codetime.my.controller;
+package com.codetime.myweb.controller;
 
 import com.codetime.common.pojo.CommonResult;
-import com.codetime.my.domain.MyAccount;
-import com.codetime.system.service.ISystemUserAccountService;
+import com.codetime.myweb.domain.MyAccount;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-
-import javax.validation.Valid;
 
 import java.util.HashMap;
 import java.util.List;

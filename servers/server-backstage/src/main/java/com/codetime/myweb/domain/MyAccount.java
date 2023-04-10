@@ -1,4 +1,4 @@
-package com.codetime.my.domain;
+package com.codetime.myweb.domain;
 
 import java.util.Date;
 
