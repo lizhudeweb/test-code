@@ -29,7 +29,6 @@ logging:
 # Spring配置
 spring:
   application:
-    #项目名称
     name: test-code-server-backstage
   profiles: 
     active: dev

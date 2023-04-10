@@ -63,5 +63,8 @@ public class CommonResult<T> implements Serializable {
     public static <T> CommonResult<T> error(ErrorCodeEnum errorCode) {
         return error(errorCode.getCode(), errorCode.getMsg());
     }
+    public static <T> CommonResult<T> error(String errorCode) {
+        return error(null, errorCode);
+    }
 
 }

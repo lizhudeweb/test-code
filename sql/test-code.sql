@@ -2,7 +2,7 @@
 -- Table structure for system_user
 -- ----------------------------
 DROP TABLE IF EXISTS `system_user_account`;
-CREATE TABLE `system_user`  (
+CREATE TABLE `system_user_account`  (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '用户ID',
   `account` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '账号',
   `password` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '密码',

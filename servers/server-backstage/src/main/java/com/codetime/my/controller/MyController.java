@@ -41,14 +41,16 @@ public class MyController {
     }
 
     @GetMapping(value = "/test")
-    public CommonResult buyPhone(@Validated MyAccount phone, BindingResult result) {
-        List<FieldError> fieldErrors = result.getFieldErrors();
-        Map<String, Object> errorMap = new HashMap<>(10);
-        fieldErrors.forEach(error -> {
-                    logger.error("字段:{}校验失败, Message:{} \n", error.getField(), error.getDefaultMessage());
-                    errorMap.put(error.getField(), error.getDefaultMessage());
-                }
-        );
+    public CommonResult buyPhone(@Validated MyAccount account, BindingResult result) {
+        if (result.hasErrors()) {
+            List<FieldError> fieldErrors = result.getFieldErrors();
+            Map<String, Object> errorMap = new HashMap<>(10);
+            fieldErrors.forEach(error -> {
+                        logger.error("字段:{}校验失败, Message:{} \n", error.getField(), error.getDefaultMessage());
+                        errorMap.put(error.getField(), error.getDefaultMessage());
+                    }
+            );
+        }
         return success();
     }
 
