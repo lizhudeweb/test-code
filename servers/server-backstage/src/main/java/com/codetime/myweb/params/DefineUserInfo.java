@@ -10,9 +10,5 @@ import org.springframework.stereotype.Component;
 public class DefineUserInfo {
 
     private String username;
-
     private int age;
-
-    private String position;
-
 }

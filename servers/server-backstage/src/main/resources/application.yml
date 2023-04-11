@@ -1,10 +1,7 @@
-# 开发环境配置
 server:
-  # 服务器的HTTP端口，默认为8080
-  port: 8080
+  port: 28888
   servlet:
-    # 应用的访问路径
-    context-path: /
+    context-path: /test-code
   tomcat:
     # tomcat的URI编码
     uri-encoding: UTF-8
@@ -18,7 +15,8 @@ server:
 
 logging:
   # 配置日志位置
-  file: /logs/test-code/test-code.out
+  file:
+    path: /logs/test-code/test-code.out
   # 配置日志输出格式（定位到哪行输出，方便排查）
   pattern:
     console: '%d{HH:mm:ss.SSS} %-5level %logger{36} [%line] - %msg%n'
@@ -92,3 +90,5 @@ define:
   userinfo:
     username: 666666
     age: 88
+  quartz:
+    cron: "*/5 * * * * ?"
