@@ -10,14 +10,17 @@ import org.springframework.stereotype.Component;
 @EnableScheduling
 @EnableAsync
 public class QuartzDemo {
-    @Async
+
+    @Async("threadPoolTaskExecutor")
     @Scheduled(cron = "${define.quartz.cron}")
     public void schedule() {
         System.out.println(Thread.currentThread().hashCode());
     }
-    @Async
+
+    @Async("threadPoolTaskExecutor")
     @Scheduled(cron = "${define.quartz.cron}")
     public void schedule2() {
         System.out.println(Thread.currentThread().hashCode());
     }
+
 }

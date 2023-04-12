@@ -23,7 +23,7 @@ public class QuartzThreadPoolConfig {
         // 缓存队列（阻塞队列）
         executor.setQueueCapacity(10);
         //配置线程池中的线程的名称前缀
-        executor.setThreadNamePrefix("demo.tyzhou-");
+        executor.setThreadNamePrefix("threadPool-");
 
         executor.setRejectedExecutionHandler(new ThreadPoolExecutor.CallerRunsPolicy());
         executor.initialize();
