@@ -22,7 +22,7 @@ import static com.codetime.common.pojo.CommonResult.success;
  * @since 2023-4-8
  */
 @RestController
-@RequestMapping("/my/")
+@RequestMapping("/my")
 public class MyController {
     private static final Logger logger = LoggerFactory.getLogger(MyController.class);
 

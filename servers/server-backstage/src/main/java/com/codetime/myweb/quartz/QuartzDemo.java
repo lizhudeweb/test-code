@@ -11,16 +11,19 @@ import org.springframework.stereotype.Component;
 @EnableAsync
 public class QuartzDemo {
 
-    @Async("threadPoolTaskExecutor")
-    @Scheduled(cron = "${define.quartz.cron}")
+//    @Async("threadPoolTaskExecutor")
+//    @Scheduled(cron = "${define.quartz.cron}")
     public void schedule() {
         System.out.println(Thread.currentThread().hashCode());
+        System.out.println(Thread.currentThread().getName());
     }
 
-    @Async("threadPoolTaskExecutor")
-    @Scheduled(cron = "${define.quartz.cron}")
+//    @Async("threadPoolTaskExecutor")
+//    @Scheduled(cron = "${define.quartz.cron}")
     public void schedule2() {
         System.out.println(Thread.currentThread().hashCode());
+        System.out.println(Thread.currentThread().getName());
+
     }
 
 }

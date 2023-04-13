@@ -92,3 +92,5 @@ define:
     age: 88
   quartz:
     cron: "*/5 * * * * ?"
+  file:
+    path: D:\upload\
