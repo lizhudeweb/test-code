@@ -28,6 +28,6 @@ public class CustomWebConfigure implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(interceptor).addPathPatterns("/**").excludePathPatterns("/static/**");
+        registry.addInterceptor(interceptor).addPathPatterns("/myweb/**").excludePathPatterns("/static/**");
     }
 }

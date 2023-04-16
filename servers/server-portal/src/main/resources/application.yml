@@ -1,0 +1,32 @@
+server:
+  port: 28889
+  servlet:
+    context-path: /test-code
+  tomcat:
+    # tomcat的URI编码
+    uri-encoding: UTF-8
+    # 连接数满后的排队数，默认为100
+    accept-count: 100
+    threads:
+      # tomcat最大线程数，默认为200
+      max: 200
+      # Tomcat启动初始化的线程数，默认值10
+      min-spare: 10
+
+logging:
+  # 配置日志位置
+  file:
+    path: /logs/test-code/test-code.out
+  # 配置日志输出格式（定位到哪行输出，方便排查）
+  pattern:
+    console: '%d{HH:mm:ss.SSS} %-5level %logger{36} [%line] - %msg%n'
+  level:
+    com.codetime: info
+    org.springframework: info
+
+# Spring配置
+spring:
+  application:
+    name: test-code-server-portal
+  profiles: 
+    active: dev

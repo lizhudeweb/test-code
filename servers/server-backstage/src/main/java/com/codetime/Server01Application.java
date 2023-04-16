@@ -1,6 +1,6 @@
 package com.codetime;
 
-import com.codetconfig.AutoAutoConfigure;
+import com.autoconfig.AutoConfigure;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
@@ -19,8 +19,9 @@ public class Server01Application {
 
         ConfigurableApplicationContext context = SpringApplication.run(Server01Application.class, args);
         System.out.println("启动成功=============================");
-        AutoAutoConfigure ext = context.getBean(AutoAutoConfigure.class);
+        AutoConfigure ext = context.getBean(AutoConfigure.class);
         System.out.println(ext.getName());
+        System.out.println(ext.systemInit());
     }
 
 }

@@ -50,18 +50,21 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(ServiceException.class)
     public CommonResult handleServiceException(ServiceException e, HttpServletRequest request) {
         log.error(e.getMessage(), e);
+        String requestURI = request.getRequestURI();
         Integer code = e.getCode();
+        log.error("请求地址'{}',业务异常'{}'", requestURI, e.getMessage());
         return CommonResult.error(code, e.getMessage());
     }
 
     /**
      * 拦截未知的运行时异常
+     * Internal Server Error
      */
     @ExceptionHandler(RuntimeException.class)
     public CommonResult handleRuntimeException(RuntimeException e, HttpServletRequest request) {
         String requestURI = request.getRequestURI();
-        log.error("请求地址'{}',发生未知异常.", requestURI, e);
-        return CommonResult.error(e.getMessage());
+        log.error("请求地址'{}',发生RuntimeException", requestURI, e);
+        return CommonResult.error(ErrorCodeEnum.SERVER_ERROR);
     }
 
     /**
@@ -70,7 +73,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(Exception.class)
     public CommonResult handleException(Exception e, HttpServletRequest request) {
         String requestURI = request.getRequestURI();
-        log.error("请求地址'{}',发生系统异常.", requestURI, e);
+        log.error("请求地址'{}',发生Exception", requestURI, e);
         return CommonResult.error(e.getMessage());
     }
 

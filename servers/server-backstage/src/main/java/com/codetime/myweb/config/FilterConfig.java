@@ -1,6 +1,6 @@
 package com.codetime.myweb.config;
 
-import com.codetime.myweb.filter.MyFilter;
+import com.codetime.myweb.filter.MyFilter1;
 import com.codetime.myweb.filter.MyFilter2;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
@@ -15,10 +15,10 @@ public class FilterConfig {
      */
     @Bean
     public FilterRegistrationBean myFilter() {
-        FilterRegistrationBean<MyFilter> filterContainer = new FilterRegistrationBean<>();
-        filterContainer.setFilter(new MyFilter());
+        FilterRegistrationBean<MyFilter1> filterContainer = new FilterRegistrationBean<>();
+        filterContainer.setFilter(new MyFilter1());
         //filter pattern
-        filterContainer.addUrlPatterns("/*");
+        filterContainer.addUrlPatterns("/myweb/*");
         //filter name
         filterContainer.setName("MyFilter");
         //filter order
@@ -31,7 +31,7 @@ public class FilterConfig {
         FilterRegistrationBean<MyFilter2> filterContainer = new FilterRegistrationBean<>();
         filterContainer.setFilter(new MyFilter2());
         //filter pattern
-        filterContainer.addUrlPatterns("/*");
+        filterContainer.addUrlPatterns("/myweb/*");
         //filter name
         filterContainer.setName("MyFilter2");
         //filter order

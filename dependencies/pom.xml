@@ -10,6 +10,7 @@
     <version>${revision}</version>
     <packaging>pom</packaging>
 
+    <description>自定义start基础 pom 文件</description>
 
     <properties>
         <revision>1.0.1-snapshot</revision>

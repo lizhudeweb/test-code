@@ -17,18 +17,18 @@ public class MyInterceptor extends HandlerInterceptorAdapter {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        LOGGER.info("资源预处理");
+        LOGGER.info("MyInterceptor 预处理");
         return true;
     }
 
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, @Nullable ModelAndView modelAndView) throws Exception {
-        LOGGER.info("资源后处理");
+        LOGGER.info("MyInterceptor 后处理");
     }
 
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, @Nullable Exception ex) throws Exception {
-        LOGGER.info("请求完成，清理资源");
+        LOGGER.info("MyInterceptor 请求完成，清理资源");
     }
 
 }

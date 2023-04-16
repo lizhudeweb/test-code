@@ -1,6 +1,7 @@
-package com.codetime.myweb.file;
+package com.codetime.myweb.controller;
 
 import com.codetime.common.utils.StringUtils;
+import com.codetime.myweb.file.FileService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.UnsupportedEncodingException;
 
 @Controller
+@RequestMapping("/myweb/file")
 public class FileController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(FileController.class);

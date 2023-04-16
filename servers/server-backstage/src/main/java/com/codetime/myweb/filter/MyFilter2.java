@@ -9,15 +9,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class MyFilter2 implements Filter {
-    private static final Logger LOGGER = LoggerFactory.getLogger(MyFilter2.class);
+    private static final Logger logger = LoggerFactory.getLogger(MyFilter2.class);
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest httpServletRequest = (HttpServletRequest) servletRequest;
         HttpServletResponse httpServletResponse = (HttpServletResponse) servletResponse;
-
-        String param = httpServletRequest.getParameter("param");
-        LOGGER.error("param:{}", param);
-
+        logger.info("MyFilter2 URL：{}", httpServletRequest.getRequestURI());
         filterChain.doFilter(httpServletRequest, httpServletResponse);
     }
 }
