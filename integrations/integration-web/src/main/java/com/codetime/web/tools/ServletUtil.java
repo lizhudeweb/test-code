@@ -28,6 +28,29 @@ public class ServletUtil {
 
     private static final Logger logger = LoggerFactory.getLogger(ServletUtil.class);
 
+    public static HttpServletRequest getCurrentRequest() {
+        ServletRequestAttributes requestAttributes;
+        try {
+            requestAttributes = (ServletRequestAttributes)
+                    RequestContextHolder.currentRequestAttributes();
+            // 线程 共享Request (线程传递)
+            RequestContextHolder.setRequestAttributes(requestAttributes, true);
+            return requestAttributes.getRequest();
+        } catch (IllegalStateException e) {
+            return null;
+        }
+    }
+
+    public static HttpServletResponse getCurrentResponse() {
+        HttpServletResponse response;
+        try {
+            response = ((ServletRequestAttributes)
+                    RequestContextHolder.currentRequestAttributes()).getResponse();
+        } catch (Exception e) {
+            return null;
+        }
+        return response;
+    }
 
     public static ServletRequestAttributes getRequestAttributes() {
         RequestAttributes attributes = RequestContextHolder.getRequestAttributes();
@@ -104,7 +127,7 @@ public class ServletUtil {
     /**
      * url编码
      *
-     * @param str 内容
+     * @param str str
      * @return String
      */
     public static String urlEncode(String str) {

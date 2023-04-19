@@ -22,7 +22,7 @@ public @interface AddLog {
     /**
      * 操作类型
      */
-    public OperateType OperateType() default "";
+    public OperateType OperateType() default OperateType.DEFAULT;
 
     /**
      * 保存请求的参数

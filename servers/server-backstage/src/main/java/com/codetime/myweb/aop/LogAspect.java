@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 
-import static com.codetime.myweb.aop.WebUtils.getRequest;
 
 
 @Aspect
@@ -27,13 +26,9 @@ public class LogAspect {
     /**
      * 处理请求前执行
      */
-    @Before(value = "pointCutName()")
+    @Before(value = "pointCutName() && @annotation(addLog)")
     public void operation(JoinPoint joinPoint, AddLog addLog) {
         TIME_THREADLOCAL.set(System.currentTimeMillis());
-        HttpServletRequest request = getRequest();
-        if (request == null) {
-            return;
-        }
         logger.info("Before 开始前置通知");
         // 被代理的对象
         Object target = joinPoint.getTarget();
@@ -61,7 +56,7 @@ public class LogAspect {
      *
      * @param joinPoint 切点
      */
-    @AfterReturning(pointcut = "pointCutName()", returning = "jsonResult")
+    @AfterReturning(pointcut = "pointCutName() && @annotation(addLog)", returning = "jsonResult")
     public void doAfterReturning(JoinPoint joinPoint, AddLog addLog, Object jsonResult) {
         handleLog(joinPoint, addLog, null, jsonResult);
     }
@@ -70,9 +65,9 @@ public class LogAspect {
      * 拦截异常操作
      *
      * @param joinPoint 切点
-     * @param e         异常
+     * @param e
      */
-    @AfterThrowing(value = "pointCutName()", throwing = "e")
+    @AfterThrowing(value = "pointCutName() && @annotation(addLog)", throwing = "e")
     public void doAfterThrowing(JoinPoint joinPoint, AddLog addLog, Exception e) {
         handleLog(joinPoint, addLog, e, null);
     }
@@ -87,6 +82,7 @@ public class LogAspect {
             String methodName = joinPoint.getSignature().getName();
 
             // 插入日志
+
             Long costTi = System.currentTimeMillis() - TIME_THREADLOCAL.get();
             logger.info("costTi:{}", costTi);
 

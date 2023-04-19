@@ -5,7 +5,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 
 @ConfigurationProperties(prefix = "auto")
 @Data
-public class AutoProperties {
+public class AutoConfigureProperties {
 
     private String name;
 

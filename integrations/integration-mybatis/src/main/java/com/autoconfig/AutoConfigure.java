@@ -7,18 +7,18 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ConditionalOnClass(AutoInitService.class)
-@EnableConfigurationProperties(AutoProperties.class)
+@ConditionalOnClass(AutoConfigureService.class)
+@EnableConfigurationProperties(AutoConfigureProperties.class)
 public class AutoConfigure {
 
     public String getName() {
-        return "AutoAutoConfigure getName=============================";
+        return "AutoConfigure getName =============================";
     }
 
     @Bean(initMethod = "init")
     @ConditionalOnMissingBean
-    public AutoInitService autoInitServiceInit() {
+    public AutoConfigureService autoConfigureServiceInit() {
         System.out.println("autoInitServiceInit=============================");
-        return new AutoInitService();
+        return new AutoConfigureService();
     }
 }

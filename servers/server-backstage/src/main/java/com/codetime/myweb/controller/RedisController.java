@@ -1,6 +1,6 @@
 package com.codetime.myweb.controller;
 
-import com.autoconfig.AutoProperties;
+import com.autoconfig.AutoConfigureProperties;
 import com.codetime.myweb.aop.AddLog;
 import com.codetime.myweb.redis.RedisUtil;
 import com.codetime.system.domain.SystemUserAccount;
@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 @RestController
@@ -23,12 +22,12 @@ public class RedisController {
     private RedisUtil redisUtil;
 
 //    @Resource
-    private AutoProperties autoProperties;
+    private AutoConfigureProperties autoConfigureProperties;
 
     @GetMapping(value = "/getKey")
     @AddLog
     public String getKey(HttpServletRequest request, String key) {
-        logger.info("RedisController autoProperties:{}", autoProperties.getMessage());
+        logger.info("RedisController autoProperties:{}", autoConfigureProperties.getMessage());
         logger.info("RedisController getKey:{}", key);
         return redisUtil.get(key);
     }

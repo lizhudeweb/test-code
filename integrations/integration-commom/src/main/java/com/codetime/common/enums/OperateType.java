@@ -2,7 +2,6 @@ package com.codetime.common.enums;
 
 public enum OperateType {
 
-
     /**
      * 新增
      */
@@ -24,12 +23,12 @@ public enum OperateType {
     GRANT,
 
     /**
-     * 清空数据
+     * 清空
      */
     CLEAN,
 
     /**
-     * 其它
+     * 默认
      */
-    OTHER,
+    DEFAULT,
 }
